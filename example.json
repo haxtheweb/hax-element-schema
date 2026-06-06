@@ -1,0 +1,9 @@
+{
+  "tag": "block-quote",
+  "properties": {
+    "citation": "Padmé Amidala: Star wars, Episode II",
+    "image": "https://haxtheweb.org/files/padme.jpg",
+    "alt": "Portrait of Padmé Amidala"
+  },
+  "content": "<p>So this is how liberty dies... with thunderous applause</p>"
+}

@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://haxtheweb.org/schemas/hax-element-schema.schema.json",
+  "title": "HAXElementSchema",
+  "description": "Schema for the lightweight HAX element representation used in demoSchema and runtime element conversion.",
+  "type": "object",
+  "required": [
+    "tag"
+  ],
+  "properties": {
+    "tag": {
+      "type": "string",
+      "description": "Tag name for the element to create (for example: block-quote, simple-img, p).",
+      "minLength": 1
+    },
+    "properties": {
+      "type": "object",
+      "description": "Properties and attributes to assign to the target element.",
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "integer"
+          },
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "array"
+          },
+          {
+            "type": "object"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "content": {
+      "type": "string",
+      "description": "Light DOM string content used as inner HTML."
+    },
+    "eventName": {
+      "type": "string",
+      "description": "Optional event metadata attached by insertion or conversion workflows."
+    }
+  },
+  "additionalProperties": false
+}
