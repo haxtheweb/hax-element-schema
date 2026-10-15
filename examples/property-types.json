@@ -1,0 +1,15 @@
+{
+  "tag": "video-player",
+  "properties": {
+    "source": "https://www.youtube.com/watch?v=LrS7dqokTLE",
+    "mediaTitle": "Intro to HAX",
+    "startTime": 0,
+    "accentColor": "blue",
+    "dark": true,
+    "hideTimestamps": false,
+    "tracks": [
+      { "kind": "captions", "src": "files/intro.vtt", "srclang": "en", "label": "English" }
+    ]
+  },
+  "content": ""
+}

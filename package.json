@@ -1,0 +1,25 @@
+{
+  "name": "@haxtheweb/hax-element-schema",
+  "version": "0.1.0",
+  "description": "JSON Schema and validator for HAXElementSchema, the virtual-DOM element payload used by HAX",
+  "keywords": ["hax", "haxtheweb", "json-schema", "virtual-dom", "web-components", "validator"],
+  "homepage": "https://github.com/haxtheweb/hax-element-schema#readme",
+  "bugs": { "url": "https://github.com/haxtheweb/issues/issues" },
+  "repository": { "type": "git", "url": "git+https://github.com/haxtheweb/hax-element-schema.git" },
+  "license": "Apache-2.0",
+  "main": "scripts/validate.js",
+  "exports": {
+    ".": "./scripts/validate.js",
+    "./hax-element-schema.schema.json": "./hax-element-schema.schema.json",
+    "./package.json": "./package.json"
+  },
+  "bin": { "hax-element-validate": "scripts/validate.js" },
+  "files": ["hax-element-schema.schema.json", "scripts/validate.js", "example.json", "example.haxProperties.json", "examples/"],
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "validate": "node scripts/validate.js",
+    "test": "node scripts/test.js"
+  },
+  "dependencies": { "ajv": "^8.17.1" },
+  "publishConfig": { "access": "public" }
+}
