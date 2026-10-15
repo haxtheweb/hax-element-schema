@@ -1,0 +1,20 @@
+[
+  {
+    "tag": "awesome-explosion",
+    "description": "Medium orange explosion",
+    "properties": {
+      "size": "medium",
+      "color": "orange"
+    },
+    "content": ""
+  },
+  {
+    "tag": "awesome-explosion",
+    "description": "Large blue explosion",
+    "properties": {
+      "size": "large",
+      "color": "blue"
+    },
+    "content": ""
+  }
+]
