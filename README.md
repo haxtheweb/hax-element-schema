@@ -146,3 +146,7 @@ This repo includes [`hax-element-schema.schema.json`](hax-element-schema.schema.
 - Keep `HAXElementSchema` documentation focused and easy to discover.
 - Provide canonical examples for docs, tests, and tooling.
 - Offer a shared reference for systems that import/export HAX element payloads.
+
+## Releasing
+
+This package is versioned with the rest of the HAX ecosystem and is published by the ubiquity release (`scripts/ubiquity-push.sh` in haxtheweb/webcomponents), which runs `commit-and-tag-version --release-as <ecosystem version>`, pushes the tag and runs `npm publish`. To cut a release of just this package, run `npm run release` (tests, bumps the version and CHANGELOG, tags, pushes to `master`, publishes).
