@@ -1,0 +1,141 @@
+{
+  "id": "ed584e4e-c127-4254-9275-94dbe1c83bcc",
+  "title": "HAX Element Schema",
+  "author": "",
+  "description": "Documentation for HAXElementSchema, the lightweight virtual DOM object format HAX uses before converting to real DOM nodes.",
+  "license": "by-sa",
+  "metadata": {
+    "author": {},
+    "site": {
+      "name": "hax-element-schema-docs",
+      "logo": "assets/banner.jpg",
+      "settings": {
+        "lang": "en-US",
+        "publishPagesOn": true,
+        "canonical": true,
+        "pathauto": true
+      },
+      "created": 1793381564,
+      "updated": 1793381564,
+      "git": {
+        "vendor": "github",
+        "branch": "gh-pages"
+      }
+    },
+    "theme": {
+      "element": "clean-one",
+      "path": "@haxtheweb/clean-one/clean-one.js",
+      "name": "Clean One",
+      "thumbnail": "@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-clean-one-thumb.jpg",
+      "description": "Start with a blank site using the Clean One",
+      "category": [
+        "Course"
+      ],
+      "hidden": false,
+      "priority": -2,
+      "terrible": false,
+      "supportedPalettes": [
+        "4",
+        "5"
+      ],
+      "variables": {
+        "icon": "icons:book",
+        "hexCode": "#1e407c",
+        "cssVariable": "--ddd-primary-1"
+      }
+    },
+    "node": {
+      "fields": {}
+    },
+    "platform": {
+      "audience": "expert",
+      "features": {},
+      "allowedBlocks": []
+    },
+    "build": {
+      "version": "26.8.0",
+      "structure": "course",
+      "type": "own"
+    }
+  },
+  "items": [
+    {
+      "id": "item-56ad6396-1bf9-4a36-a603-1dbd24dbecac",
+      "indent": 0,
+      "location": "pages/item-56ad6396-1bf9-4a36-a603-1dbd24dbecac/index.html",
+      "slug": "welcome",
+      "order": 0,
+      "parent": null,
+      "title": "Overview",
+      "description": "",
+      "metadata": {
+        "created": 1793381564,
+        "updated": 1793381564
+      }
+    },
+    {
+      "id": "item-5172f6a3-defa-44a2-a19d-8e22a4920e65",
+      "indent": 0,
+      "location": "pages/item-5172f6a3-defa-44a2-a19d-8e22a4920e65/index.html",
+      "slug": "welcome/relationship-to-haxproperties",
+      "order": 1,
+      "parent": null,
+      "title": "Relationship to haxProperties",
+      "description": "",
+      "metadata": {
+        "created": 1793381685,
+        "updated": 1793381685,
+        "images": [],
+        "videos": []
+      }
+    },
+    {
+      "id": "item-c2b6bfdb-274e-48ef-9646-bc04d4410d87",
+      "indent": 0,
+      "location": "pages/item-c2b6bfdb-274e-48ef-9646-bc04d4410d87/index.html",
+      "slug": "virtual-dom-usage-points",
+      "order": 2,
+      "parent": null,
+      "title": "Virtual DOM Usage Points",
+      "description": "",
+      "metadata": {
+        "created": 1793381690,
+        "updated": 1793381690,
+        "images": [],
+        "videos": []
+      }
+    },
+    {
+      "id": "item-4d7d0949-4647-4cf1-b529-75ec1e4f1fb7",
+      "indent": 0,
+      "location": "pages/item-4d7d0949-4647-4cf1-b529-75ec1e4f1fb7/index.html",
+      "slug": "runtime-behavior-json-schema",
+      "order": 3,
+      "parent": null,
+      "title": "Runtime Behavior & JSON Schema",
+      "description": "",
+      "metadata": {
+        "created": 1793381697,
+        "updated": 1793381697,
+        "images": [],
+        "videos": []
+      }
+    },
+    {
+      "id": "item-d18b1cdb-2645-48da-8694-816f518e17ad",
+      "indent": 0,
+      "location": "pages/item-d18b1cdb-2645-48da-8694-816f518e17ad/index.html",
+      "slug": "more-schemas",
+      "order": 4,
+      "parent": null,
+      "title": "More Schemas",
+      "description": "",
+      "metadata": {
+        "created": 1793381702,
+        "updated": 1793381702,
+        "images": [],
+        "videos": []
+      }
+    }
+  ]
+}

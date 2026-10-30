@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>HAX Element Schema</title>
+    <link>https://localhost/hax-element-schema-docs/</link>
+    <description>Documentation for HAXElementSchema, the lightweight virtual DOM object format HAX uses before converting to real DOM nodes.</description>
+    <copyright>Copyright (C) 2026 https://localhost/hax-element-schema-docs</copyright>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 30 Oct 2026 17:32:44 GMT</lastBuildDate>
+    <generator>HAXcms NodeJS</generator>
+    <atom:link href="https://localhost/hax-element-schema-docs/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Overview</title>
+      <link>https://localhost/hax-element-schema-docs/welcome</link>
+      <description>HAXElementSchema is the lightweight object format HAX uses as a virtual DOM representation before converting to real DOM nodes. This is a companion spec to hax-schema . Where hax-schema explains the full haxProperties contract for element authoring, this site focuses specifically on the element payload objects used in demoSchema , insertion, and conversion workflows. Core shape HAXElementSchema is an object with this shape: { &quot;tag&quot;: &quot;my-tag&quot;, &quot;properties&quot;: { &quot;title&quot;: &quot;Example title&quot; }, &quot;conte...</description>
+      <guid>https://localhost/hax-element-schema-docs/welcome</guid>
+      <pubDate>Fri, 30 Oct 2026 17:32:44 GMT</pubDate>
+    </item>
+    <item>
+      <title>Relationship to haxProperties</title>
+      <link>https://localhost/hax-element-schema-docs/welcome/relationship-to-haxproperties</link>
+      <description>Inside a haxProperties file, demoSchema is an array of HAXElementSchema objects: { &quot;demoSchema&quot;: [ { &quot;tag&quot;: &quot;block-quote&quot;, &quot;properties&quot;: { &quot;citation&quot;: &quot;Padmé Amidala: Star wars, Episode II&quot; }, &quot;content&quot;: &quot;&amp;lt;p&amp;gt;So this is how liberty dies... with thunderous applause&amp;lt;/p&amp;gt;&quot; } ] } A full sample haxProperties file pairs the gizmo metadata, settings.configure field list, saveOptions , and demoSchema together: { &quot;api&quot;: &quot;1&quot;, &quot;type&quot;: &quot;element&quot;, &quot;canScale&quot;: false, &quot;canEditSource&quot;: true, &quot;hideD...</description>
+      <guid>https://localhost/hax-element-schema-docs/welcome/relationship-to-haxproperties</guid>
+      <pubDate>Fri, 30 Oct 2026 17:34:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>Virtual DOM Usage Points</title>
+      <link>https://localhost/hax-element-schema-docs/virtual-dom-usage-points</link>
+      <description>HAX uses the HAXElementSchema object shape as a lightweight virtual DOM payload during authoring operations. The object is passed around, transformed, and only materialized into actual nodes at insertion/render time. These are the primary usage points in HAX core: Virtual DOM → DOM conversion haxElementToNode(haxSchema) creates real nodes from tag , properties , and content . Reference: elements/utils/utils.js#L1207-L1314 DOM → virtual DOM conversion nodeToHaxElement(node, eventName) serializ...</description>
+      <guid>https://localhost/hax-element-schema-docs/virtual-dom-usage-points</guid>
+      <pubDate>Fri, 30 Oct 2026 17:34:50 GMT</pubDate>
+    </item>
+    <item>
+      <title>Runtime Behavior &amp; JSON Schema</title>
+      <link>https://localhost/hax-element-schema-docs/runtime-behavior-json-schema</link>
+      <description>Runtime conversion behavior In HAX core, conversion happens primarily in two functions: haxElementToNode(haxSchema) — converts a schema object to a real DOM node. nodeToHaxElement(node, eventName) — converts a DOM node to a schema object. Important behavior to be aware of: Camel-cased property keys are converted to dash-cased attributes where needed. true sets boolean attributes, false removes them. Object/array values are set as properties when possible. content becomes light DOM ( innerHTML...</description>
+      <guid>https://localhost/hax-element-schema-docs/runtime-behavior-json-schema</guid>
+      <pubDate>Fri, 30 Oct 2026 17:34:57 GMT</pubDate>
+    </item>
+    <item>
+      <title>More Schemas</title>
+      <link>https://localhost/hax-element-schema-docs/more-schemas</link>
+      <description>hax-element-schema is one of several schema specifications in the HAX ecosystem. Explore the others: JSON Outline Schema — the content structure, site navigation, and metadata schema used by HAXcms. HAX Schema — the full haxProperties contract for element authoring. Merlin Schema — the command-palette and voice-assistant Option/Program schema. Appstore Spec — the schema for external media providers, upload targets, stax templates, and autoloaded elements. New to HAX? Get started with HAX .</description>
+      <guid>https://localhost/hax-element-schema-docs/more-schemas</guid>
+      <pubDate>Fri, 30 Oct 2026 17:35:02 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

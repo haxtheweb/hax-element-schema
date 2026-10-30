@@ -1,0 +1,15 @@
+{
+  "id": "item-56ad6396-1bf9-4a36-a603-1dbd24dbecac",
+  "indent": 0,
+  "location": "pages/item-56ad6396-1bf9-4a36-a603-1dbd24dbecac/index.json",
+  "slug": "welcome",
+  "order": 0,
+  "parent": null,
+  "title": "Overview",
+  "description": "",
+  "metadata": {
+    "created": 1793381564,
+    "updated": 1793381564
+  },
+  "content": "<p><code>HAXElementSchema</code> is the lightweight object format HAX uses as a virtual DOM representation before converting to real DOM nodes.</p>\n<p>This is a companion spec to <a href=\"https://haxtheweb.github.io/hax-schema/\">hax-schema</a>. Where <code>hax-schema</code> explains the full <code>haxProperties</code> contract for element authoring, this site focuses specifically on the element payload objects used in <code>demoSchema</code>, insertion, and conversion workflows.</p>\n<h2>Core shape</h2>\n<p><code>HAXElementSchema</code> is an object with this shape:</p>\n<code-sample type=\"json\" copy-clipboard-button=\"copy-clipboard-button\"><template>{\n  \"tag\": \"my-tag\",\n  \"properties\": {\n    \"title\": \"Example title\"\n  },\n  \"content\": \"&lt;p&gt;Inner HTML content&lt;/p&gt;\",\n  \"eventName\": \"insert-element\"\n}</template></code-sample>\n<a11y-collapse heading-button=\"heading-button\">\n<h2 slot=\"heading\">Field reference</h2>\n<div slot=\"content\">\n<ul>\n<li><strong>tag</strong> (required): HTML/custom-element tag name to create.</li>\n<li><strong>properties</strong> (optional): key/value map of attributes and/or properties.</li>\n<li><strong>content</strong> (optional): string content assigned as light DOM.</li>\n<li><strong>eventName</strong> (optional): event metadata added by insertion pipelines.</li>\n</ul>\n</div>\n</a11y-collapse>\n<p>See a concrete object example below:</p>\n<code-sample type=\"json\" copy-clipboard-button=\"copy-clipboard-button\"><template>{\n  \"tag\": \"block-quote\",\n  \"properties\": {\n    \"citation\": \"Padmé Amidala: Star wars, Episode II\",\n    \"image\": \"https://haxtheweb.org/files/padme.jpg\",\n    \"alt\": \"Portrait of Padmé Amidala\"\n  },\n  \"content\": \"&lt;p&gt;So this is how liberty dies... with thunderous applause&lt;/p&gt;\"\n}</template></code-sample>"
+}

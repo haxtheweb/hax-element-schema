@@ -1,0 +1,69 @@
+id: item-4d7d0949-4647-4cf1-b529-75ec1e4f1fb7
+indent: 0
+location: pages/item-4d7d0949-4647-4cf1-b529-75ec1e4f1fb7/index.yaml
+slug: runtime-behavior-json-schema
+order: 2
+parent: null
+title: Runtime Behavior & JSON Schema
+description: ''
+metadata:
+  created: 1793381697
+  updated: 1793381697
+  images: []
+  videos: []
+content: >-
+  <h2>Runtime conversion behavior</h2>
+
+  <p>In HAX core, conversion happens primarily in two functions:</p>
+
+  <ul>
+
+  <li><code>haxElementToNode(haxSchema)</code> — converts a schema object to a
+  real DOM node.</li>
+
+  <li><code>nodeToHaxElement(node, eventName)</code> — converts a DOM node to a
+  schema object.</li>
+
+  </ul>
+
+  <p>Important behavior to be aware of:</p>
+
+  <ul>
+
+  <li>Camel-cased property keys are converted to dash-cased attributes where
+  needed.</li>
+
+  <li><code>true</code> sets boolean attributes, <code>false</code> removes
+  them.</li>
+
+  <li>Object/array values are set as properties when possible.</li>
+
+  <li><code>content</code> becomes light DOM (<code>innerHTML</code>) on
+  conversion.</li>
+
+  <li><code>iframe</code> is rewritten to <code>webview</code> in sandboxed
+  environments.</li>
+
+  </ul>
+
+  <h2>JSON Schema</h2>
+
+  <p>This spec includes a machine-readable JSON Schema,
+  <code>hax-element-schema.schema.json</code>, for validation and tooling
+  support against the <a
+  href="https://github.com/haxtheweb/hax-element-schema/blob/master/hax-element-schema.schema.json">repository
+  source</a>.</p>
+
+  <h2>Why this exists</h2>
+
+  <ul>
+
+  <li>Keep <code>HAXElementSchema</code> documentation focused and easy to
+  discover.</li>
+
+  <li>Provide canonical examples for docs, tests, and tooling.</li>
+
+  <li>Offer a shared reference for systems that import/export HAX element
+  payloads.</li>
+
+  </ul>

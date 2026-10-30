@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-56ad6396-1bf9-4a36-a603-1dbd24dbecac</id>
+<indent>0</indent>
+<location>pages/item-56ad6396-1bf9-4a36-a603-1dbd24dbecac/index.xml</location>
+<slug>welcome</slug>
+<order>0</order>
+<parent></parent>
+<title>Overview</title>
+<description></description>
+<metadata>
+<created>1793381564</created>
+<updated>1793381564</updated>
+</metadata>
+<content><![CDATA[<p><code>HAXElementSchema</code> is the lightweight object format HAX uses as a virtual DOM representation before converting to real DOM nodes.</p>
+<p>This is a companion spec to <a href="https://haxtheweb.github.io/hax-schema/">hax-schema</a>. Where <code>hax-schema</code> explains the full <code>haxProperties</code> contract for element authoring, this site focuses specifically on the element payload objects used in <code>demoSchema</code>, insertion, and conversion workflows.</p>
+<h2>Core shape</h2>
+<p><code>HAXElementSchema</code> is an object with this shape:</p>
+<code-sample type="json" copy-clipboard-button="copy-clipboard-button"><template>{
+  "tag": "my-tag",
+  "properties": {
+    "title": "Example title"
+  },
+  "content": "&lt;p&gt;Inner HTML content&lt;/p&gt;",
+  "eventName": "insert-element"
+}</template></code-sample>
+<a11y-collapse heading-button="heading-button">
+<h2 slot="heading">Field reference</h2>
+<div slot="content">
+<ul>
+<li><strong>tag</strong> (required): HTML/custom-element tag name to create.</li>
+<li><strong>properties</strong> (optional): key/value map of attributes and/or properties.</li>
+<li><strong>content</strong> (optional): string content assigned as light DOM.</li>
+<li><strong>eventName</strong> (optional): event metadata added by insertion pipelines.</li>
+</ul>
+</div>
+</a11y-collapse>
+<p>See a concrete object example below:</p>
+<code-sample type="json" copy-clipboard-button="copy-clipboard-button"><template>{
+  "tag": "block-quote",
+  "properties": {
+    "citation": "Padmé Amidala: Star wars, Episode II",
+    "image": "https://haxtheweb.org/files/padme.jpg",
+    "alt": "Portrait of Padmé Amidala"
+  },
+  "content": "&lt;p&gt;So this is how liberty dies... with thunderous applause&lt;/p&gt;"
+}</template></code-sample>]]></content>
+</item>

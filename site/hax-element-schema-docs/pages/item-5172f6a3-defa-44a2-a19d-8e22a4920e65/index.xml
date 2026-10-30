@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-5172f6a3-defa-44a2-a19d-8e22a4920e65</id>
+<indent>0</indent>
+<location>pages/item-5172f6a3-defa-44a2-a19d-8e22a4920e65/index.xml</location>
+<slug>welcome/relationship-to-haxproperties</slug>
+<order>0</order>
+<parent>item-56ad6396-1bf9-4a36-a603-1dbd24dbecac</parent>
+<title>Relationship to haxProperties</title>
+<description></description>
+<metadata>
+<created>1793381685</created>
+<updated>1793381685</updated>
+<images>
+</images>
+<videos>
+</videos>
+</metadata>
+<content><![CDATA[<p>Inside a <code>haxProperties</code> file, <code>demoSchema</code> is an array of <code>HAXElementSchema</code> objects:</p>
+<code-sample type="json" copy-clipboard-button="copy-clipboard-button"><template>{
+  "demoSchema": [
+    {
+      "tag": "block-quote",
+      "properties": {
+        "citation": "Padmé Amidala: Star wars, Episode II"
+      },
+      "content": "&lt;p&gt;So this is how liberty dies... with thunderous applause&lt;/p&gt;"
+    }
+  ]
+}</template></code-sample>
+<p>A full sample <code>haxProperties</code> file pairs the <code>gizmo</code> metadata, <code>settings.configure</code> field list, <code>saveOptions</code>, and <code>demoSchema</code> together:</p>
+<code-sample type="json" copy-clipboard-button="copy-clipboard-button"><template>{
+  "api": "1",
+  "type": "element",
+  "canScale": false,
+  "canEditSource": true,
+  "hideDefaultSettings": true,
+  "designSystem": {
+    "accent": true,
+    "primary": false,
+    "card": true,
+    "text": false,
+    "designTreatment": false
+  },
+  "gizmo": {
+    "title": "Block quote",
+    "description": "A well designed quote element with image of author",
+    "icon": "editor:format-quote",
+    "color": "blue",
+    "tags": ["Layout", "quote", "blockquote", "content", "design", "presentation"],
+    "meta": {
+      "author": "HAXTheWeb core team"
+    }
+  },
+  "settings": {
+    "configure": [
+      {
+        "property": "citation",
+        "title": "Citation",
+        "description": "The citation of the element",
+        "inputMethod": "textfield"
+      },
+      {
+        "property": "alt",
+        "title": "Alt",
+        "description": "The alt text for the image",
+        "inputMethod": "textfield"
+      },
+      {
+        "property": "image",
+        "title": "Image",
+        "description": "The image of the element",
+        "inputMethod": "haxupload",
+        "noVoiceRecord": true,
+        "validationType": "url"
+      }
+    ],
+    "advanced": []
+  },
+  "saveOptions": {
+    "wipeSlot": false,
+    "unsetAttributes": []
+  },
+  "demoSchema": [
+    {
+      "tag": "block-quote",
+      "properties": {
+        "citation": "Padmé Amidala: Star wars, Episode II",
+        "image": "https://haxtheweb.org/files/padme.jpg",
+        "alt": "Portrait of Padmé Amidala"
+      },
+      "content": "&lt;p&gt;So this is how liberty dies... with thunderous applause&lt;/p&gt;"
+    }
+  ]
+}</template></code-sample>
+<p>See the full field-by-field contract for authoring <code>haxProperties</code> on the <a href="https://haxtheweb.github.io/hax-schema/">hax-schema</a> site.</p>]]></content>
+</item>

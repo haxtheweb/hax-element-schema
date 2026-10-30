@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>HAX Element Schema</title>
+  <link href="https://localhost/hax-element-schema-docs/" rel="self" />
+  <subtitle>Documentation for HAXElementSchema, the lightweight virtual DOM object format HAX uses before converting to real DOM nodes.</subtitle>
+  <updated>2026-10-30T17:32:44.000Z</updated>
+  <author>
+      <name></name>
+  </author>
+  <id>https://localhost/hax-element-schema-docs/</id>
+  
+  <entry>
+    <title>Overview</title>
+    <id>item-56ad6396-1bf9-4a36-a603-1dbd24dbecac</id>
+    <updated>2026-10-30T17:32:44.000Z</updated>
+    <published>2026-10-30T17:32:44.000Z</published>
+    <summary></summary>
+    <link href="https://localhost/hax-element-schema-docs/welcome"/>
+    
+    <content type="html">
+      <![CDATA[ <p><code>HAXElementSchema</code> is the lightweight object format HAX uses as a virtual DOM representation before converting to real DOM nodes.</p>
+<p>This is a companion spec to <a href="https://haxtheweb.github.io/hax-schema/">hax-schema</a>. Where <code>hax-schema</code> explains the full <code>haxProperties</code> contract for element authoring, this site focuses specifically on the element payload objects used in <code>demoSchema</code>, insertion, and conversion workflows.</p>
+<h2>Core shape</h2>
+<p><code>HAXElementSchema</code> is an object with this shape:</p>
+<code-sample type="json" copy-clipboard-button="copy-clipboard-button"><template>{
+  "tag": "my-tag",
+  "properties": {
+    "title": "Example title"
+  },
+  "content": "&lt;p&gt;Inner HTML content&lt;/p&gt;",
+  "eventName": "insert-element"
+}</template></code-sample>
+<a11y-collapse heading-button="heading-button">
+<h2 slot="heading">Field reference</h2>
+<div slot="content">
+<ul>
+<li><strong>tag</strong> (required): HTML/custom-element tag name to create.</li>
+<li><strong>properties</strong> (optional): key/value map of attributes and/or properties.</li>
+<li><strong>content</strong> (optional): string content assigned as light DOM.</li>
+<li><strong>eventName</strong> (optional): event metadata added by insertion pipelines.</li>
+</ul>
+</div>
+</a11y-collapse>
+<p>See a concrete object example below:</p>
+<code-sample type="json" copy-clipboard-button="copy-clipboard-button"><template>{
+  "tag": "block-quote",
+  "properties": {
+    "citation": "Padmé Amidala: Star wars, Episode II",
+    "image": "https://haxtheweb.org/files/padme.jpg",
+    "alt": "Portrait of Padmé Amidala"
+  },
+  "content": "&lt;p&gt;So this is how liberty dies... with thunderous applause&lt;/p&gt;"
+}</template></code-sample> ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Relationship to haxProperties</title>
+    <id>item-5172f6a3-defa-44a2-a19d-8e22a4920e65</id>
+    <updated>2026-10-30T17:34:45.000Z</updated>
+    <published>2026-10-30T17:34:45.000Z</published>
+    <summary></summary>
+    <link href="https://localhost/hax-element-schema-docs/welcome/relationship-to-haxproperties"/>
+    
+    <content type="html">
+      <![CDATA[ <p>Inside a <code>haxProperties</code> file, <code>demoSchema</code> is an array of <code>HAXElementSchema</code> objects:</p>
+<code-sample type="json" copy-clipboard-button="copy-clipboard-button"><template>{
+  "demoSchema": [
+    {
+      "tag": "block-quote",
+      "properties": {
+        "citation": "Padmé Amidala: Star wars, Episode II"
+      },
+      "content": "&lt;p&gt;So this is how liberty dies... with thunderous applause&lt;/p&gt;"
+    }
+  ]
+}</template></code-sample>
+<p>A full sample <code>haxProperties</code> file pairs the <code>gizmo</code> metadata, <code>settings.configure</code> field list, <code>saveOptions</code>, and <code>demoSchema</code> together:</p>
+<code-sample type="json" copy-clipboard-button="copy-clipboard-button"><template>{
+  "api": "1",
+  "type": "element",
+  "canScale": false,
+  "canEditSource": true,
+  "hideDefaultSettings": true,
+  "designSystem": {
+    "accent": true,
+    "primary": false,
+    "card": true,
+    "text": false,
+    "designTreatment": false
+  },
+  "gizmo": {
+    "title": "Block quote",
+    "description": "A well designed quote element with image of author",
+    "icon": "editor:format-quote",
+    "color": "blue",
+    "tags": ["Layout", "quote", "blockquote", "content", "design", "presentation"],
+    "meta": {
+      "author": "HAXTheWeb core team"
+    }
+  },
+  "settings": {
+    "configure": [
+      {
+        "property": "citation",
+        "title": "Citation",
+        "description": "The citation of the element",
+        "inputMethod": "textfield"
+      },
+      {
+        "property": "alt",
+        "title": "Alt",
+        "description": "The alt text for the image",
+        "inputMethod": "textfield"
+      },
+      {
+        "property": "image",
+        "title": "Image",
+        "description": "The image of the element",
+        "inputMethod": "haxupload",
+        "noVoiceRecord": true,
+        "validationType": "url"
+      }
+    ],
+    "advanced": []
+  },
+  "saveOptions": {
+    "wipeSlot": false,
+    "unsetAttributes": []
+  },
+  "demoSchema": [
+    {
+      "tag": "block-quote",
+      "properties": {
+        "citation": "Padmé Amidala: Star wars, Episode II",
+        "image": "https://haxtheweb.org/files/padme.jpg",
+        "alt": "Portrait of Padmé Amidala"
+      },
+      "content": "&lt;p&gt;So this is how liberty dies... with thunderous applause&lt;/p&gt;"
+    }
+  ]
+}</template></code-sample>
+<p>See the full field-by-field contract for authoring <code>haxProperties</code> on the <a href="https://haxtheweb.github.io/hax-schema/">hax-schema</a> site.</p> ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Virtual DOM Usage Points</title>
+    <id>item-c2b6bfdb-274e-48ef-9646-bc04d4410d87</id>
+    <updated>2026-10-30T17:34:50.000Z</updated>
+    <published>2026-10-30T17:34:50.000Z</published>
+    <summary></summary>
+    <link href="https://localhost/hax-element-schema-docs/virtual-dom-usage-points"/>
+    
+    <content type="html">
+      <![CDATA[ <p>HAX uses the <code>HAXElementSchema</code> object shape as a lightweight virtual DOM payload during authoring operations. The object is passed around, transformed, and only materialized into actual nodes at insertion/render time.</p>
+<p>These are the primary usage points in HAX core:</p>
+<a11y-collapse heading-button="heading-button">
+<h2 slot="heading">Virtual DOM → DOM conversion</h2>
+<div slot="content">
+<p><code>haxElementToNode(haxSchema)</code> creates real nodes from <code>tag</code>, <code>properties</code>, and <code>content</code>.</p>
+<p>Reference: <a href="https://github.com/haxtheweb/webcomponents/blob/master/elements/utils/utils.js#L1207-L1314">elements/utils/utils.js#L1207-L1314</a></p>
+</div>
+</a11y-collapse>
+<a11y-collapse heading-button="heading-button">
+<h2 slot="heading">DOM → virtual DOM conversion</h2>
+<div slot="content">
+<p><code>nodeToHaxElement(node, eventName)</code> serializes existing nodes into <code>HAXElementSchema</code>.</p>
+<p>Reference: <a href="https://github.com/haxtheweb/webcomponents/blob/master/elements/utils/utils.js#L1500-L1718">elements/utils/utils.js#L1500-L1718</a></p>
+</div>
+</a11y-collapse>
+<a11y-collapse heading-button="heading-button">
+<h2 slot="heading">Prototype/factory creation</h2>
+<div slot="content">
+<p><code>haxElementPrototype(gizmo, properties, content)</code> returns <code>{ tag, properties, content, gizmo }</code>.</p>
+<p>Reference: <a href="https://github.com/haxtheweb/webcomponents/blob/master/elements/hax-body/lib/hax-store.js#L5102-L5109">elements/hax-body/lib/hax-store.js#L5102-L5109</a></p>
+</div>
+</a11y-collapse>
+<a11y-collapse heading-button="heading-button">
+<h2 slot="heading">Tray insertion pipeline</h2>
+<div slot="content">
+<p><code>hax-tray</code> resolves <code>demoSchema[0]</code> or builds a prototype object and dispatches it via <code>hax-insert-content</code>.</p>
+<p>Reference: <a href="https://github.com/haxtheweb/webcomponents/blob/master/elements/hax-body/lib/hax-tray.js#L1081-L1136">elements/hax-body/lib/hax-tray.js#L1081-L1136</a></p>
+</div>
+</a11y-collapse>
+<a11y-collapse heading-button="heading-button">
+<h2 slot="heading">Store insertion pipeline</h2>
+<div slot="content">
+<p><code>_haxStoreInsertContent</code> consumes <code>detail.tag/content/properties</code> and converts to DOM via <code>haxElementToNode</code> for inline and replace flows.</p>
+<p>Reference: <a href="https://github.com/haxtheweb/webcomponents/blob/master/elements/hax-body/lib/hax-store.js#L4067-L4192">elements/hax-body/lib/hax-store.js#L4067-L4192</a></p>
+</div>
+</a11y-collapse>
+<a11y-collapse heading-button="heading-button">
+<h2 slot="heading">Keyboard shortcuts</h2>
+<div slot="content">
+<p>Shortcut map entries are <code>HAXElementSchema</code>-style objects and are converted to nodes at runtime.</p>
+<p>References:</p>
+<ul>
+<li><a href="https://github.com/haxtheweb/webcomponents/blob/master/elements/hax-body/lib/hax-store.js#L2975-L2985">elements/hax-body/lib/hax-store.js#L2975-L2985</a></li>
+<li><a href="https://github.com/haxtheweb/webcomponents/blob/master/elements/hax-body/hax-body.js#L1852-L1878">elements/hax-body/hax-body.js#L1852-L1878</a></li>
+</ul>
+</div>
+</a11y-collapse>
+<a11y-collapse heading-button="heading-button">
+<h2 slot="heading">Duplicate workflow</h2>
+<div slot="content">
+<p><code>haxDuplicateNode</code> converts DOM → <code>HAXElementSchema</code> → DOM to ensure clean cloning.</p>
+<p>Reference: <a href="https://github.com/haxtheweb/webcomponents/blob/master/elements/hax-body/hax-body.js#L2426-L2443">elements/hax-body/hax-body.js#L2426-L2443</a></p>
+</div>
+</a11y-collapse>
+<a11y-collapse heading-button="heading-button">
+<h2 slot="heading">Dev helper insertion</h2>
+<div slot="content">
+<p><code>globalThis.Hax.add</code> inserts using <code>schema.demoSchema[0]</code> via <code>haxElementToNode</code>.</p>
+<p>Reference: <a href="https://github.com/haxtheweb/webcomponents/blob/master/elements/hax-body/lib/hax-store.js#L5348-L5355">elements/hax-body/lib/hax-store.js#L5348-L5355</a></p>
+</div>
+</a11y-collapse> ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Runtime Behavior &amp; JSON Schema</title>
+    <id>item-4d7d0949-4647-4cf1-b529-75ec1e4f1fb7</id>
+    <updated>2026-10-30T17:34:57.000Z</updated>
+    <published>2026-10-30T17:34:57.000Z</published>
+    <summary></summary>
+    <link href="https://localhost/hax-element-schema-docs/runtime-behavior-json-schema"/>
+    
+    <content type="html">
+      <![CDATA[ <h2>Runtime conversion behavior</h2>
+<p>In HAX core, conversion happens primarily in two functions:</p>
+<ul>
+<li><code>haxElementToNode(haxSchema)</code> — converts a schema object to a real DOM node.</li>
+<li><code>nodeToHaxElement(node, eventName)</code> — converts a DOM node to a schema object.</li>
+</ul>
+<p>Important behavior to be aware of:</p>
+<ul>
+<li>Camel-cased property keys are converted to dash-cased attributes where needed.</li>
+<li><code>true</code> sets boolean attributes, <code>false</code> removes them.</li>
+<li>Object/array values are set as properties when possible.</li>
+<li><code>content</code> becomes light DOM (<code>innerHTML</code>) on conversion.</li>
+<li><code>iframe</code> is rewritten to <code>webview</code> in sandboxed environments.</li>
+</ul>
+<h2>JSON Schema</h2>
+<p>This spec includes a machine-readable JSON Schema, <code>hax-element-schema.schema.json</code>, for validation and tooling support against the <a href="https://github.com/haxtheweb/hax-element-schema/blob/master/hax-element-schema.schema.json">repository source</a>.</p>
+<h2>Why this exists</h2>
+<ul>
+<li>Keep <code>HAXElementSchema</code> documentation focused and easy to discover.</li>
+<li>Provide canonical examples for docs, tests, and tooling.</li>
+<li>Offer a shared reference for systems that import/export HAX element payloads.</li>
+</ul> ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>More Schemas</title>
+    <id>item-d18b1cdb-2645-48da-8694-816f518e17ad</id>
+    <updated>2026-10-30T17:35:02.000Z</updated>
+    <published>2026-10-30T17:35:02.000Z</published>
+    <summary></summary>
+    <link href="https://localhost/hax-element-schema-docs/more-schemas"/>
+    
+    <content type="html">
+      <![CDATA[ <p>hax-element-schema is one of several schema specifications in the HAX ecosystem. Explore the others:</p>
+<ul>
+<li><a href="https://haxtheweb.github.io/json-outline-schema/">JSON Outline Schema</a> — the content structure, site navigation, and metadata schema used by HAXcms.</li>
+<li><a href="https://haxtheweb.github.io/hax-schema/">HAX Schema</a> — the full haxProperties contract for element authoring.</li>
+<li><a href="https://haxtheweb.github.io/merlin-schema/">Merlin Schema</a> — the command-palette and voice-assistant Option/Program schema.</li>
+<li><a href="https://haxtheweb.github.io/appstore-spec/">Appstore Spec</a> — the schema for external media providers, upload targets, stax templates, and autoloaded elements.</li>
+</ul>
+<p>New to HAX? <a href="https://haxtheweb.org/">Get started with HAX</a>.</p> ]]>
+    </content>
+  </entry>
+</feed>

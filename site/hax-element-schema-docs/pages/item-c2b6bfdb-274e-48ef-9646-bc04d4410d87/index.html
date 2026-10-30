@@ -1,0 +1,62 @@
+<p>HAX uses the <code>HAXElementSchema</code> object shape as a lightweight virtual DOM payload during authoring operations. The object is passed around, transformed, and only materialized into actual nodes at insertion/render time.</p>
+<p>These are the primary usage points in HAX core:</p>
+<a11y-collapse heading-button="heading-button">
+<h2 slot="heading">Virtual DOM → DOM conversion</h2>
+<div slot="content">
+<p><code>haxElementToNode(haxSchema)</code> creates real nodes from <code>tag</code>, <code>properties</code>, and <code>content</code>.</p>
+<p>Reference: <a href="https://github.com/haxtheweb/webcomponents/blob/master/elements/utils/utils.js#L1207-L1314">elements/utils/utils.js#L1207-L1314</a></p>
+</div>
+</a11y-collapse>
+<a11y-collapse heading-button="heading-button">
+<h2 slot="heading">DOM → virtual DOM conversion</h2>
+<div slot="content">
+<p><code>nodeToHaxElement(node, eventName)</code> serializes existing nodes into <code>HAXElementSchema</code>.</p>
+<p>Reference: <a href="https://github.com/haxtheweb/webcomponents/blob/master/elements/utils/utils.js#L1500-L1718">elements/utils/utils.js#L1500-L1718</a></p>
+</div>
+</a11y-collapse>
+<a11y-collapse heading-button="heading-button">
+<h2 slot="heading">Prototype/factory creation</h2>
+<div slot="content">
+<p><code>haxElementPrototype(gizmo, properties, content)</code> returns <code>{ tag, properties, content, gizmo }</code>.</p>
+<p>Reference: <a href="https://github.com/haxtheweb/webcomponents/blob/master/elements/hax-body/lib/hax-store.js#L5102-L5109">elements/hax-body/lib/hax-store.js#L5102-L5109</a></p>
+</div>
+</a11y-collapse>
+<a11y-collapse heading-button="heading-button">
+<h2 slot="heading">Tray insertion pipeline</h2>
+<div slot="content">
+<p><code>hax-tray</code> resolves <code>demoSchema[0]</code> or builds a prototype object and dispatches it via <code>hax-insert-content</code>.</p>
+<p>Reference: <a href="https://github.com/haxtheweb/webcomponents/blob/master/elements/hax-body/lib/hax-tray.js#L1081-L1136">elements/hax-body/lib/hax-tray.js#L1081-L1136</a></p>
+</div>
+</a11y-collapse>
+<a11y-collapse heading-button="heading-button">
+<h2 slot="heading">Store insertion pipeline</h2>
+<div slot="content">
+<p><code>_haxStoreInsertContent</code> consumes <code>detail.tag/content/properties</code> and converts to DOM via <code>haxElementToNode</code> for inline and replace flows.</p>
+<p>Reference: <a href="https://github.com/haxtheweb/webcomponents/blob/master/elements/hax-body/lib/hax-store.js#L4067-L4192">elements/hax-body/lib/hax-store.js#L4067-L4192</a></p>
+</div>
+</a11y-collapse>
+<a11y-collapse heading-button="heading-button">
+<h2 slot="heading">Keyboard shortcuts</h2>
+<div slot="content">
+<p>Shortcut map entries are <code>HAXElementSchema</code>-style objects and are converted to nodes at runtime.</p>
+<p>References:</p>
+<ul>
+<li><a href="https://github.com/haxtheweb/webcomponents/blob/master/elements/hax-body/lib/hax-store.js#L2975-L2985">elements/hax-body/lib/hax-store.js#L2975-L2985</a></li>
+<li><a href="https://github.com/haxtheweb/webcomponents/blob/master/elements/hax-body/hax-body.js#L1852-L1878">elements/hax-body/hax-body.js#L1852-L1878</a></li>
+</ul>
+</div>
+</a11y-collapse>
+<a11y-collapse heading-button="heading-button">
+<h2 slot="heading">Duplicate workflow</h2>
+<div slot="content">
+<p><code>haxDuplicateNode</code> converts DOM → <code>HAXElementSchema</code> → DOM to ensure clean cloning.</p>
+<p>Reference: <a href="https://github.com/haxtheweb/webcomponents/blob/master/elements/hax-body/hax-body.js#L2426-L2443">elements/hax-body/hax-body.js#L2426-L2443</a></p>
+</div>
+</a11y-collapse>
+<a11y-collapse heading-button="heading-button">
+<h2 slot="heading">Dev helper insertion</h2>
+<div slot="content">
+<p><code>globalThis.Hax.add</code> inserts using <code>schema.demoSchema[0]</code> via <code>haxElementToNode</code>.</p>
+<p>Reference: <a href="https://github.com/haxtheweb/webcomponents/blob/master/elements/hax-body/lib/hax-store.js#L5348-L5355">elements/hax-body/lib/hax-store.js#L5348-L5355</a></p>
+</div>
+</a11y-collapse>

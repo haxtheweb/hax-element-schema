@@ -1,4 +1,6 @@
 # hax-element-schema
+📖 **[Browse the rendered docs](https://haxtheweb.github.io/hax-element-schema/)**
+
 Documentation for `HAXElementSchema`, the lightweight object format HAX uses as a virtual DOM representation before converting to real DOM nodes.
 
 This is a companion repo to `hax-schema`. Where `hax-schema` explains the full `haxProperties` contract for element authoring, this repo focuses specifically on the element payload objects used in `demoSchema`, insertion, and conversion workflows.

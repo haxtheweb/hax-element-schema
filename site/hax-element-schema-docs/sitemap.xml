@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://localhost/hax-element-schema-docs/welcome</loc>
+    <lastmod>2026-10-30T17:32:44.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://localhost/hax-element-schema-docs/welcome/relationship-to-haxproperties</loc>
+    <lastmod>2026-10-30T17:34:45.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://localhost/hax-element-schema-docs/virtual-dom-usage-points</loc>
+    <lastmod>2026-10-30T17:34:50.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://localhost/hax-element-schema-docs/runtime-behavior-json-schema</loc>
+    <lastmod>2026-10-30T17:34:57.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://localhost/hax-element-schema-docs/more-schemas</loc>
+    <lastmod>2026-10-30T17:35:02.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
