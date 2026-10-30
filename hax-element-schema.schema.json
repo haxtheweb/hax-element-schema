@@ -1,54 +1,47 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://haxtheweb.org/schemas/hax-element-schema.schema.json",
+  "$id": "https://raw.githubusercontent.com/haxtheweb/hax-element-schema/master/hax-element-schema.schema.json",
   "title": "HAXElementSchema",
-  "description": "Schema for the lightweight HAX element representation used in demoSchema and runtime element conversion.",
+  "description": "Lightweight virtual-DOM description of one element: HAX materializes it with haxElementToNode() (webcomponents elements/utils/utils.js) and produces it from a live node with nodeToHaxElement(). Used for haxProperties `demoSchema` entries, tray / Merlin insertion payloads (`hax-insert-content`), duplicate, and keyboard-shortcut insert snippets. Unknown keys are rejected so typos are caught; put tool-specific data under keys that start with `x-`.",
   "type": "object",
-  "required": [
-    "tag"
-  ],
+  "required": ["tag"],
   "properties": {
     "tag": {
+      "description": "Tag name to create: a lowercase HTML tag (`p`, `h2`, `img`) or a custom element (`block-quote`). `iframe` is rewritten to `webview` in sandboxed (desktop) environments.",
       "type": "string",
-      "description": "Tag name for the element to create (for example: block-quote, simple-img, p).",
-      "minLength": 1
+      "pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$"
     },
     "properties": {
+      "description": "Values to apply to the element, keyed by camelCase property name or dash-case attribute name; keys are dash-cased before use, so `fooBar` and `foo-bar` target the same attribute. Strings and numbers become attributes; `true` sets a boolean attribute and `false` removes it; arrays and plain objects are assigned as element properties instead of attributes. `innerHTML` / `innerText` keys are ignored (use `content`), `on*` event-handler attributes are always stripped, and `srcdoc` is stripped from iframes.",
       "type": "object",
-      "description": "Properties and attributes to assign to the target element.",
+      "propertyNames": {
+        "pattern": "^[A-Za-z_$][A-Za-z0-9_$:.-]*$"
+      },
       "additionalProperties": {
-        "anyOf": [
-          {
-            "type": "string"
-          },
-          {
-            "type": "number"
-          },
-          {
-            "type": "integer"
-          },
-          {
-            "type": "boolean"
-          },
-          {
-            "type": "array"
-          },
-          {
-            "type": "object"
-          },
-          {
-            "type": "null"
-          }
-        ]
+        "description": "Avoid `null`: it is written as the literal attribute value \"null\". Omit the key instead.",
+        "type": ["string", "number", "boolean", "array", "object"]
       }
     },
     "content": {
-      "type": "string",
-      "description": "Light DOM string content used as inner HTML."
+      "description": "Light DOM HTML assigned as the element's innerHTML. Use `slot=\"name\"` on children to target named slots. Defaults to an empty string.",
+      "type": "string"
     },
     "eventName": {
-      "type": "string",
-      "description": "Optional event metadata attached by insertion or conversion workflows."
+      "description": "Set by nodeToHaxElement() (default `insert-element`) to tag where the payload came from. Not needed when authoring demoSchema entries.",
+      "type": "string"
+    },
+    "description": {
+      "description": "Human label for this variant when an element ships several demoSchema entries (for example \"Large blue explosion\"). Informational; HAX core does not read it.",
+      "type": "string"
+    },
+    "gizmo": {
+      "description": "Runtime only: haxElementPrototype() attaches the matching gizmo when it builds a payload from search results. Do not author.",
+      "type": "object"
+    }
+  },
+  "patternProperties": {
+    "^x-": {
+      "description": "Extension key for tool-specific data HAX does not read."
     }
   },
   "additionalProperties": false

@@ -1,0 +1,7 @@
+{
+  "tag": "grid-plate",
+  "properties": {
+    "layout": "1-1"
+  },
+  "content": "<p slot=\"col-1\">Left column</p><p slot=\"col-2\">Right column</p>"
+}

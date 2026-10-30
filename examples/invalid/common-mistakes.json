@@ -1,0 +1,15 @@
+{
+  "tag": "Block-Quote",
+  "attributes": {
+    "citation": "wrong key: use properties"
+  },
+  "properties": {
+    "citation": null,
+    "innerHTML": "<p>use content instead</p>",
+    "onclick": "alert(1)",
+    "imageAlt": "Portrait",
+    "image-alt": "Portrait again",
+    "posterSrc": "data:image/png;base64,iVBORw0KGgo="
+  },
+  "content": "<script>alert('never runs')</script>"
+}

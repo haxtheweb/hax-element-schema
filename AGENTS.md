@@ -2,6 +2,14 @@
 
 This file provides comprehensive instructions for AI coding agents working within the HAX ecosystem. HAX (Headless Authoring eXperience) is a comprehensive web development ecosystem that enables rapid creation of accessible, performant web components and static sites. Follow these guidelines to set up, develop, test, and contribute effectively to HAX projects.
 
+## This repository (hax-element-schema)
+
+Repo-specific notes; the rest of this file is the shared ecosystem guide.
+
+- **What lives here:** the HAXElementSchema spec (README.md), its JSON Schema (`hax-element-schema.schema.json`), a validator in `scripts/validate.js`, and examples in `example.json`, `example.haxProperties.json` and `examples/` (`invalid/` = one fixture per mistake the validator catches).
+- **Writing a demoSchema entry or insertion payload:** read "Rules for tools and agents writing HAXElementSchema" in README.md, then run `node scripts/validate.js <file>` (works on a haxProperties file directly; add `--json` for a structured report).
+- **Keep prose and schema in sync:** a behavior change means editing README.md, the schema and an example in the same PR; `npm test` must pass. The source of truth is `haxElementToNode()` / `nodeToHaxElement()` in webcomponents `elements/utils/utils.js`. The full haxProperties contract lives in hax-schema.
+
 ## HAX Ecosystem Overview
 
 The HAX ecosystem consists of multiple interconnected repositories, each serving specific purposes:
